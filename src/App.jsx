@@ -8,10 +8,7 @@ function Square({value, onSquareClick}) {
   );
 }
 
- function Board() {
-  const [xIsNext, setXIsNext] = useState(true);
-  const [squares, setSquares] = useState(Array(9).fill(null));
-
+ function Board({ xIsNext, squares, onPlay }) {
   function handleClick(i) {
     if (squares[i] || calculateWinner(squares)) {
       return;
@@ -87,7 +84,7 @@ export default function Game() { //export default --> use game component as top 
   return (
     <div className="game">
       <div className="game-board">
-        <Board />
+       <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className="game-info">
         <ol>{/*TODO*/}</ol>
