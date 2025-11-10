@@ -81,8 +81,10 @@ export default function Game() { //export default --> use game component as top 
     setHistory([...history, nextSquares]);
     setXIsNext(!xIsNext);
   }
+  
   function jumpTo(nextMove) {
-    // TODO
+    setCurrentMove(nextMove);
+    setXIsNext(nextMove % 2 === 0);
   }
 
    const moves = history.map((squares, move) => {
