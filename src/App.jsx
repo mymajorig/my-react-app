@@ -78,6 +78,12 @@ function calculateWinner(squares) {
 export default function Game() { //export default --> use game component as top level component instead of board
   const [xIsNext, setXIsNext] = useState(true);
   const [history, setHistory] = useState([Array(9).fill(null)]);
+  const currentSquares = history[history.length - 1];
+  
+    function handlePlay(nextSquares) {
+    // TODO
+  }
+  
   return (
     <div className="game">
       <div className="game-board">
