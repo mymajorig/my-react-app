@@ -19,8 +19,7 @@ function Square({value, onSquareClick}) {
     } else {
       nextSquares[i] = 'O';
     }
-    setSquares(nextSquares);
-    setXIsNext(!xIsNext);
+    onPlay(nextSquares);
   }
 
   const winner = calculateWinner(squares);
@@ -78,7 +77,8 @@ export default function Game() { //export default --> use game component as top 
   const currentSquares = history[history.length - 1];
   
     function handlePlay(nextSquares) {
-    // TODO
+    setHistory([...history, nextSquares]);
+    setXIsNext(!xIsNext);
   }
   
   return (
